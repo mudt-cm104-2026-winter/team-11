@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Things to bring</title>
+  <title>PyPython</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
   <main>
-    <h1>Things to bring</h1>
-    <p class="intro">Who brings what to our team evening?</p>
+    <h1>PyPython</h1>
+    <p class="intro">PyPython is a simple web-based Snake game, powered by a Python backend and featuring a snake
+      designed to resemble a real python.The game offers two modes: Classic Mode, where hitting a wall ends the game,
+      and Teleport Mode, where the snake reappears on the opposite side of the screen upon hitting a wall.
+      Both modes feature their own Top 10 leaderboards, displaying the usernames and scores of the ten highest-scoring
+      players.</p>
 
     <form class="add" action="/add" method="post">
       <input name="thing" placeholder="What?" required autocomplete="off" autofocus>
@@ -20,11 +26,17 @@
     {% if entries %}
     <table>
       <thead>
-        <tr><th>What</th><th>Who</th></tr>
+        <tr>
+          <th>What</th>
+          <th>Who</th>
+        </tr>
       </thead>
       <tbody>
         {% for entry in entries %}
-        <tr><td>{{ entry.thing }}</td><td>{{ entry.person }}</td></tr>
+        <tr>
+          <td>{{ entry.thing }}</td>
+          <td>{{ entry.person }}</td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
@@ -33,4 +45,5 @@
     {% endif %}
   </main>
 </body>
+
 </html>
