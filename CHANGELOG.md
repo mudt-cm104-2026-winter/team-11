@@ -8,4 +8,5 @@ Example:
 
 ## Unreleased
 
+- Players and scores are stored in a SQLite database (#N)
 - Start from the repository template
