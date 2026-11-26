@@ -9,3 +9,4 @@ Example:
 ## Unreleased
 
 - Start from the repository template
+- A pixel painter turns drawing commands into pixels on a canvas (#20)
