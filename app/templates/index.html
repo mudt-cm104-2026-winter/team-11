@@ -5,44 +5,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PyPython</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
+<body data-pyodide="{{ pyodide_url }}" data-py="{{ url_for('static', filename='pypython.py') }}">
   <main>
     <h1>PyPython</h1>
     <p class="intro">PyPython is a simple web-based Snake game, powered by a Python backend and featuring a snake
-      designed to resemble a real python.The game offers two modes: Classic Mode, where hitting a wall ends the game,
+      designed to resemble a real python. The game offers two modes: Classic Mode, where hitting a wall ends the game,
       and Teleport Mode, where the snake reappears on the opposite side of the screen upon hitting a wall.
       Both modes feature their own Top 10 leaderboards, displaying the usernames and scores of the ten highest-scoring
-      players.</p>
+      players. The page needs the game files, which arrive in small PRs.</p>
 
-    <form class="add" action="/add" method="post">
-      <input name="thing" placeholder="What?" required autocomplete="off" autofocus>
-      <input name="person" placeholder="Who?" required autocomplete="off">
-      <button type="submit">Add</button>
-    </form>
+    <div id="boot">Loading Python&hellip;</div>
+    <canvas id="cv" width="836" height="576" tabindex="0" aria-label="PyPython game"></canvas>
 
-    {% if entries %}
-    <table>
-      <thead>
-        <tr>
-          <th>What</th>
-          <th>Who</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for entry in entries %}
-        <tr>
-          <td>{{ entry.thing }}</td>
-          <td>{{ entry.person }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% else %}
-    <p class="empty">Nothing here yet.</p>
-    {% endif %}
+    <dialog id="login-dlg">
+      <form id="login-form" autocomplete="off">
+        <h2>PyPython</h2>
+        <label for="name">Enter a username (2-16 letters, numbers, _):</label>
+        <input id="name" maxlength="16" spellcheck="false">
+        <p id="err" role="alert"></p>
+        <div class="row">
+          <button type="submit" class="btn primary">OK</button>
+          <button type="button" id="login-cancel" class="btn" hidden>Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="confirm-dlg">
+      <h2>PyPython</h2>
+      <p id="confirm-text"></p>
+      <div class="row">
+        <button id="yes" class="btn primary">Yes, Let's Play!</button>
+        <button id="no" class="btn">Choose Different Name</button>
+      </div>
+    </dialog>
+
+    <script src="{{ pyodide_url }}pyodide.js"></script>
+    <script src="{{ url_for('static', filename='pyp.js') }}"></script>
   </main>
 </body>
 
