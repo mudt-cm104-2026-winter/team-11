@@ -17,3 +17,6 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Local database (usernames and scores): never commit
+*.db
