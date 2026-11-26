@@ -29,7 +29,7 @@ The example page keeps its entries in memory: after a restart the list is empty 
 |---|---|
 | StBuerak | Backend: database, API and tests |
 | dru-pixel | Page and login |
-| THIRD-USERNAME | Documentation |
+| solana3 | Documentation |
 
 ## How we work
 
