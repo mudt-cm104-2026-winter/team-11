@@ -10,3 +10,4 @@ Example:
 
 - Players and scores are stored in a SQLite database (#13)
 - Start from the repository template
+- The core game mechanics (snake, food, score, Classic and Teleport) are in place (#16)
