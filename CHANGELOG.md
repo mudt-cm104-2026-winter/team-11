@@ -8,5 +8,5 @@ Example:
 
 ## Unreleased
 
-- README describes the project, the team and how we work (#22)
+- README describes the project, the team and how we work (#23)
 - Start from the repository template
