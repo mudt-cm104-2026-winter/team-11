@@ -9,3 +9,4 @@ Example:
 ## Unreleased
 
 - Start from the repository template
+- The game can call the server and show the username and "Is this you?" dialogs (#21)
