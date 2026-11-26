@@ -9,4 +9,4 @@ Example:
 ## Unreleased
 
 - Start from the repository template
-- Pixel art for the game: colours, python skin, food sprites and font (#P)
+- Pixel art for the game: colours, python skin, food sprites and font (#19)
